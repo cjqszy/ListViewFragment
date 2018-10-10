@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MyCustomAdapter extends BaseAdapter {
 
@@ -55,7 +54,7 @@ public class MyCustomAdapter extends BaseAdapter {
         Bundle bundle2 = new Bundle();
         bundle2.putInt("key", position);
 
-        final Fragment_Img fragment_img = new Fragment_Img();
+        final FragmentImage fragment_img = new FragmentImage();
 
         fragment_img.setArguments(bundle2);
 
@@ -69,7 +68,7 @@ public class MyCustomAdapter extends BaseAdapter {
         Bundle bundle = new Bundle();
         bundle.putString("key", myFood[position]);
 
-        final Fragment_Text fragment_text = new Fragment_Text();
+        final FragmentText fragment_text = new FragmentText();
 
         fragment_text.setArguments(bundle);
 

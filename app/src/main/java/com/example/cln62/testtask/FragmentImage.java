@@ -6,22 +6,26 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ImageView;
 
-public class Fragment_Text extends Fragment {
+public class FragmentImage extends Fragment {
 
-    TextView tv2;
+    int[] myImages = {R.drawable.pizza, R.drawable.cake, R.drawable.melon, R.drawable.shshi};
+    ImageView imageView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.text, container, false);
+        View view = inflater.inflate(R.layout.image, container, false);
 
-        tv2 = view.findViewById(R.id.textView2);
+        imageView = view.findViewById(R.id.imageView2);
 
         Bundle bundle = getArguments();
-        String data = bundle.getString("key");
-        tv2.setText(data);
+
+        int position = bundle.getInt("key");
+
+        imageView.setImageResource(myImages[position]);
+
         return view;
     }
 }
